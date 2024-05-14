@@ -6,4 +6,15 @@
   flex-direction: column;
   height: 80vh;
   width: 100%; /* Ancho deseado */
+  justify-content: center;
+  align-items: center;
+}
+.display {
+  width: 50%;
+  align-content: center;
+  justify-content: center;
+}
+.login {
+  height: 100%;
+  width: 100%;
 }
