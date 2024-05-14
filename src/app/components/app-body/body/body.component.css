@@ -1,7 +1,9 @@
 .body {
   background-image: url("/assets/img/fondo.jpeg");
-  /*background-position: center center;*/
-  background-attachment: fixed;
+  background-size: 170px 170px;
   background-repeat: repeat;
-  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  width: 100%; /* Ancho deseado */
 }

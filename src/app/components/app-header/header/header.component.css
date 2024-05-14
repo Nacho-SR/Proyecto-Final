@@ -1,0 +1,8 @@
+.header {
+  background-color: #eb2526;
+  /*background-image: url("/assets/img/pokemon-logo.png");*/
+  display: flex;
+  flex-direction: column;
+  height: 10vh;
+  width: 100%; /* Ancho deseado */
+}
