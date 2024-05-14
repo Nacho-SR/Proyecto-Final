@@ -23,7 +23,7 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/assets/img/pokeball_icon.ico"
+              "src/assets/img/pokeball.ico"
             ],
             "styles": [
               "src/styles.css"
