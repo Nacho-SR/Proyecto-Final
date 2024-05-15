@@ -4,7 +4,7 @@
   background-repeat: repeat;
   display: flex;
   flex-direction: column;
-  height: 80vh;
+  height: 75vh;
   width: 100%; /* Ancho deseado */
   justify-content: center;
   justify-items: center;
@@ -17,11 +17,24 @@
 }
 .login {
   height: 100%;
-  width: 100%;
+  width: 70%;
   justify-items: center;
   align-items: center;
+  justify-content: center;
 }
 
 .center {
   justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+}
+
+.login_content {
+  margin: 5px;
+  padding: 5px;
+}
+
+.inputs {
+  max-width:1300px!important;
 }

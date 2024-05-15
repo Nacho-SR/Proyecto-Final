@@ -5,20 +5,37 @@
     rowHeight="10vh"
   >
     <mat-grid-tile>Iniciar sesión</mat-grid-tile>
-    <mat-grid-tile rowspan="4">
+    <mat-grid-tile rowspan="5">
       <mat-card class="login">
 
-        <mat-card-title>Usuario</mat-card-title>
+        <mat-card-title class="login_content">Usuario</mat-card-title>
         <mat-card-content>
-          <mat-form-field floatLabel="auto">
-            <input matInput placeholder="Ingrese correo">
+          <mat-form-field>
+            <input 
+              matInput
+              placeholder="pat@example.com"
+              [formControl]="email"
+              (blur)="updateErrorMessage()"
+              required
+            >
+            <button mat-icon-button matSuffix disabled="true"><mat-icon /></button>
+            @if (email.invalid) {
+              <mat-error>{{errorMessage}}</mat-error>
+            }
           </mat-form-field>
         </mat-card-content>
 
-        <mat-card-title>Contraseña</mat-card-title>
+        <mat-card-title class="login_content">Contraseña</mat-card-title>
         <mat-card-content>
-          <mat-form-field floatLabel="auto">
-            <input matInput placeholder="Ingrese contraseña">
+          <mat-form-field>
+            <mat-label>Ingresa tu contraseña</mat-label>
+            <input
+              matInput
+              [type]="hide ? 'password' : 'text'"
+            >
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
           </mat-form-field>
         </mat-card-content>
 
