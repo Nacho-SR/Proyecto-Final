@@ -6,12 +6,17 @@ const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':'application/json',
   })
-}
+};
 
 @Injectable({
   providedIn: 'root'
 })
 export class ObtenerDatosService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
+
+  getPokemon(url:string):Observable<object>{
+    return this.http.get(url, httpOptions);
+  }
+
 }
