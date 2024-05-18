@@ -8,9 +8,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import {merge} from 'rxjs';
-import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
-import { ObtenerDatosService } from '../../../services/obtener-datos.service';
 import { ObservablesService } from '../../../services/observables.service';
 
 
@@ -33,7 +30,7 @@ export class BodyComponent implements OnInit {
   title = 'Proyecto_Final';
 
 
-  constructor(private obtenerDatosService: ObtenerDatosService,private formBuilder: FormBuilder,
+  constructor(private formBuilder: FormBuilder,
     private observablesService:ObservablesService){
     this.checkoutForm = this.formBuilder.group({
       email : new FormControl('', [Validators.required, Validators.email]),
@@ -44,21 +41,6 @@ export class BodyComponent implements OnInit {
   ngOnInit(): void {
     this.observablesService.loginObs.subscribe();
   }
-  /*canActivate(valorFormulario:any): boolean {
-    if(!(this.checkoutForm.invalid) && (this.checkoutForm.get('email').value == 'isalas30@hotmail.com') && (this.checkoutForm.get('password').value == '123456')){
-      this.valores.push(valorFormulario);
-      console.log(valorFormulario);
-      this.checkoutForm.reset();
-      return true;
-    }else if(this.checkoutForm.invalid){
-      alert('Formulario incorrecto');
-      return false;
-    }else {
-      alert('Correo o contraseña incorrectos');
-      return false;
-    }
-  }
-  }*/
 
   onSubmit(valorFormulario:any): void {
     this.observablesService.validar(this.checkoutForm.get('email').value, this.checkoutForm.get('password').value);

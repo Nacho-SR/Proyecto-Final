@@ -14,7 +14,7 @@ export class ObservablesService {
   validar(email:string, password:string):void{
     if((email == 'isalas30@hotmail.com') && (password == '123456')){
       this.actualizarObs(true);
-      console.log(this.estado());
+      //console.log(this.estado());
       this.router.navigate(['/pokemones']);
     } else {
       this.actualizarObs(false);
